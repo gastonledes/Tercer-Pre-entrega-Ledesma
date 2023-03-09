@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block contenidoquecambia %}
+
+{% if Jugador %}
+<p>Busqueda de Jugadores</p>
+<ul>
+    {% for ap in Jugadores %}
+       <li>{{ap.nombre}}</li>
+       <li>{{ap.apellido}}</li>
+       <li>{{ap.categoria}}</li>
+       <li>{{ap.numerocarnet}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

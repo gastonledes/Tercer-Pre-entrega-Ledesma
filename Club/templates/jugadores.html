@@ -1,0 +1,28 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block contenidoquecambia %}
+<h1>Jugadores</h1>
+<p> </p>
+<p>Agregar Jugador</p>
+{% if miformulario.errors %}
+<p style="color: red;"> Estan mal los datos, revisar.</p>
+{% endif %}
+
+<form action="" method="POST">{% csrf_token %}
+    
+    <table>
+        {{ miformulario.as_table }}
+    </table>
+    
+    <input type="submit" value="Enviar">
+</form>
+<p> Busqueda por apellido</p>
+    
+<form action="buscar/" method="GET">
+    <input type="text" name='apellido' id='apellido'>
+    <input type="submit" value="buscar">
+</form>
+
+{% endblock %}
